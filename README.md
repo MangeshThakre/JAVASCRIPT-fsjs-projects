@@ -1,4 +1,4 @@
-# fsjs-javascript-25-projects
+# FSJS-javascript-25-projects
 
 
 
