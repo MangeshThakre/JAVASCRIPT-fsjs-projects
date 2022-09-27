@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         rel="icon"
+         type="image/x-icon"
+         href="./assets/icons8-shopping-cart-100.png"
+         />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+      <title>Cart App</title>
+      <!-- /////////////////////////////////////////////////////////// -->
+      <meta name="description" content="Cart System add item  remove the item from cart, increase 
+         decrease the item count of a product">
+      <!-- Facebook Meta Tags -->
+      <meta property="og:url" content="https://fsjs-cart-app.netlify.app/index.html">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Cart App">
+      <meta property="og:description" content="Cart System add item  remove the item from cart, increase 
+         decrease the item count of a product">
+      <meta property="og:image" content="./assets/Screenshot 2022-09-24 133559.png">
+      <!-- Twitter Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta property="twitter:domain" content="fsjs-cart-app.netlify.app">
+      <meta property="twitter:url" content="https://fsjs-cart-app.netlify.app/index.html">
+      <meta name="twitter:title" content="Cart App">
+      <meta name="twitter:description" content="Cart System add item  remove the item from cart, increase 
+         decrease the item count of a product">
+      <meta name="twitter:image" content="./assets/Screenshot 2022-09-24 133559.png">
+      <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+      <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+      <style>
+         .product-header,
+         .category-header {
+         width: 100%;
+         border-bottom: solid rgb(186, 186, 186) 1.5px;
+         height: 3rem;
+         display: flex;
+         align-items: center;
+         }
+         .header-text {
+         font-size: x-large;
+         }
+         .category:hover {
+         background-color: #f5eb5d;
+         border-radius: 10px;
+         }
+      </style>
+      <script>
+         tailwind.config = {
+           theme: {
+             extend: {
+               colors: {
+                 clifford: "#da373d",
+               },
+             },
+           },
+         };
+      </script>
+   </head>
+   <body  class="h-[100vh]">
+      <!-- navbar  -->
+      <nav class="w-full h-16 bg-[#fed000] flex justify-center fixed top-0">
+         <!-- nav container -->
+         <div class="h-full md:w-[85rem] flex items-center justify-between">
+            <!-- logo -->
+            <div class="flex justify-center items-center">
+               <img
+                  src="./assets/icons8-shopping-cart-100.png"
+                  class="h-12"
+                  alt=""
+                  />
+               <h3 class="font-bold">Cart App</h3>
+            </div>
+            <!-- nav right -->
+            <a href="./cart.html" class="flex justify-center items-center gap-2" ><img src="./assets/icons8-shopping-cart-16.png "  class ="h-7"  alt=""> <span id="cartNo"><span> </a>
+         </div>
+      </nav>
+      <!-- navbar end -->
+      <!-- container -->
+      <div  class ="h-full" >
+         <section class="flex pt-16 w-full h-full ">
+            <!-- category -->
+            <div
+               class="bg-[#fcf7b9] border-2 h-[100vh] fixed left-0 w-[15rem] py-8 px-2"
+               >
+               <!-- catecory heading -->
+               <div class="category-header">
+                  <h1 class="header-text">CATEGORIES</h1>
+               </div>
+               <!-- categories -->
+               <div id="categories" class="flex-col">
+                  <!-- dynamic categoruis list -->
+               </div>
+            </div>
+            <!--category end-->
+            <!-- projects  -->
+            <div class="bg-[#fefff1] h-full p-8 ml-[15rem] w-[100%]">
+               <!-- product container -->
+               <div class="h-full">
+                  <!-- product title -->
+                  <div class="product-header flex justify-between  ">
+                     <h1 id="productHeaderText" class="header-text  ">Products</h1>
+                     <!-- filter -->
+                     <form  class =" flex  gap-4"  onsubmit="filterSubmit(event)">
+                        <div  id ="categoryDropdown" class ="categoryDropdown" >
+                           <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="text-gray-700 bg-[#fed000] hover:bg-[#eee129] focus:ring-4 focus:outline-none focus:ring-[#fcf7b9] font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center " type="button">
+                              Category
+                              <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                              </svg>
+                           </button>
+                           <!-- Dropdown menu -->
+                           <div id="dropdownDefaultRadio" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                              <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
+                               <!-- dynamic options -->
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- price min -->
+                        <div id ="minPrice"  class="flex">
+                           <span class="inline-flex items-center px-3 text-sm h-[2.5rem] text-gray-900 bg-[#fed000] rounded-l-md border border-r-0 border-gray-300 ">
+                           Rs
+                           </span>
+                           <input type="number" required min="1"  placeholder="min Price" id="website-admin" class="filterInput   h-[2.5rem] rounded-none rounded-r-lg bg-[#fcf7b9] border text-gray-900 focus:ring-[#fed000] focus:border-[#fed000] block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  " >
+                        </div>
+                        <!-- price max -->
+                        <div class = "flex">
+                           <span class="inline-flex items-center px-3 text-sm h-[2.5rem] text-gray-900 bg-[#fed000] rounded-l-md border border-r-0 border-gray-300 ">
+                           Rs
+                           </span>
+                           <input type="number"  required min="1"  placeholder="max Price" id="website-admin" class=" filterInput h-[2.5rem] rounded-none rounded-r-lg bg-[#fcf7b9] border text-gray-900 focus:ring-[#fed000] focus:border-[#fed000] block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  " >
+                        </div>
+                        <!-- submit -->
+                        <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Filter</button>
+                     </form>
+                     <!-- filter end -->
+                  </div>
+                  <!-- products -->
+                  <div id="products" class="products flex flex-wrap gap-16 mt-8 justify-center ">
+                     <!-- dynamic products -->
+                  </div>
+               </div>
+               <!-- product container end -->
+            </div>
+         </section>
+      </div>
+   </body>
+   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+   <script src="./script/script.js"></script>
+</html>

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #28282b;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+}
+
+.container {
+  width: 1000px;
+  color: gray;
+}
+
+.textBox {
+  text-align: center;
+  margin: 10px 0 2rem 0;
+  cursor: default;
+  min-height: 180px;
+  align-content: end;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.textBox > div > span {
+  font-size: 23px;
+  position: relative;
+}
+
+.pointer::after {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 9px;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 1px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.showLenght {
+  text-align: end;
+}
+
+.lengtButtons {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin: 3rem 0;
+}
+
+.lenghtButton {
+  height: 2rem;
+  width: 8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(84, 84, 84);
+  background-color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+.textinputContainer {
+  height: 200px;
+  width: 1000px;
+  border: solid gainsboro;
+}
+.textInput {
+  width: 100%;
+  height: 100%;
+  background-color: #28282b;
+  font-size: 25px;
+  outline: none;
+  color: whitesmoke;
+  padding: 10px;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Flip Card</title>
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://fsjs-flip-card.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Memory Card" />
+    <meta property="og:description" content="undefined" />
+    <meta
+      property="og:image"
+      content="https://fsjs-flip-card.netlify.app/assets/light.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="fsjs-flip-card.netlify.app" />
+    <meta
+      property="twitter:url"
+      content="https://fsjs-flip-card.netlify.app/"
+    />
+    <meta name="twitter:title" content="Memory Card" />
+    <meta name="twitter:description" content="undefined" />
+    <meta
+      name="twitter:image"
+      content="https://fsjs-flip-card.netlify.app/assets/light.png"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            newFont: ['"Space Mono"', "monospace"],
+            MyFont: ['"My Font"', "serif"], // Ensure fonts with spaces have " " surrounding it.
+          },
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <style>
+    * {
+      font-family: "Space Mono", monospace;
+    }
+
+    .card:hover {
+      height: 21rem;
+    }
+    .cardImage {
+      height: 100%;
+      width: fit-content;
+      object-fit: cover;
+      border-radius: 7px;
+      display: none;
+    }
+
+    .light {
+      background-image: url(./assets/light.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .dark {
+      background-image: url(./assets/dark.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
+
+  <body class="light">
+    <div id="container" class="flex justify-center flex-col h-[100vh]">
+      <div
+        id="score"
+        class="text-2xl font-newFont absolute top-16 right-24 m-3 text-[#3e3f38]"
+      ></div>
+
+      <div
+        class="mx-8 flex relative gap-20 flex-wrap justify-center items-center h-[21rem] transition-all duration-600"
+        id="cardContainer"
+      >
+        <div
+          id="0"
+          class="card h-80 w-56 rounded-lg shadow-2xl cursor-pointer transition-all duration-600"
+          onclick="flip(this)"
+        >
+          <img src="" class="cardImage" alt="" />
+        </div>
+        <div
+          id="1"
+          class="card h-80 w-56 rounded-lg shadow-2xl cursor-pointer transition-all duration-600"
+          onclick="flip(this)"
+        >
+          <img src="" class="cardImage" alt="" />
+        </div>
+        <div
+          id="2"
+          onclick="flip(this)"
+          class="card h-80 w-56 shadow-2xl rounded-lg cursor-pointer transition-all duration-600"
+        >
+          <img src="" class="cardImage" alt="" />
+        </div>
+        <div
+          id="3"
+          onclick="flip(this)"
+          class="card h-80 w-56 shadow-2xl rounded-lg cursor-pointer transition-all duration-600"
+        >
+          <img src="" class="cardImage" alt="" />
+        </div>
+        <div
+          onclick="flip(this)"
+          id="4"
+          class="card h-80 w-56 shadow-2xl rounded-lg cursor-pointer transition-all duration-600"
+        >
+          <img src="" class="cardImage" alt="" />
+        </div>
+        <div
+          id="info"
+          class="hidden absolute cursor-default text-[#3e3f38] top-[25rem] w-[80%] justify-between transition-all duration-600"
+        >
+          <h3 class="text-2xl font-newFont">Lose</h3>
+          <span class="flex gap-4 items-center">
+            <h3 class="text-2xl">Restart</h3>
+            <img src="./assets/enter.svg" class="w-8" alt="" />
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./script.js"></script>
+</html>

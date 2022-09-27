@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Typing Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="textBox" id="textBox"></div>
+      <div class="info">
+        <div class="timer" id="timer"></div>
+        <div class="showLenght" id="showLenght"></div>
+      </div>
+
+      <div class="lengtButtons" id="lengtButtons">
+        <button id="100" class="lenghtButton" onclick="rendomText(100)">
+          Min 100 letters
+        </button>
+        <button id="200" class="lenghtButton" onclick="rendomText(200)">
+          Min 200 letters
+        </button>
+        <button id="300" class="lenghtButton" onclick="rendomText(300)">
+          Min 300 letters
+        </button>
+      </div>
+
+      <div class="textinputContainer" id="textinputContainer">
+        <textarea
+          name="Text1"
+          class="textInput"
+          id="textInput"
+          cols="40"
+          rows="5"
+          onkeydown="if(event.key=='Backspace')return false"
+          oninput="textInputHandler(this)"
+        ></textarea>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

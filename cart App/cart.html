@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/icons8-shopping-cart-100.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"
+    />
+
+    <title>Cart App</title>
+    <style>
+      .cart-header {
+        width: 100%;
+        border-bottom: solid rgb(186, 186, 186) 1.5px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .header-text {
+        font-size: x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navnbar -->
+    <nav class="w-full h-16 bg-[#fed000] flex justify-center fixed top-0 z-20">
+      <!-- nav container -->
+      <div class="h-full md:w-[85rem] flex items-center justify-between">
+        <!-- logo -->
+        <a href="./index.html">
+          <div class="flex justify-center items-center">
+            <img
+              src="./assets/icons8-shopping-cart-100.png"
+              class="h-12"
+              alt=""
+            />
+            <h3 class="font-bold">Cart App</h3>
+          </div>
+        </a>
+        <!-- nav right -->
+        <a href="./index.html">
+          <button
+            type="button"
+            class="py-2 px-3 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Home
+          </button>
+        </a>
+      </div>
+    </nav>
+    <!-- container -->
+    <div>
+      <section class="flex pt-16 bg-[#fefff1] h-[100vh]">
+        <!-- filter -->
+        <div
+          class="bg-[#fcf7b9] border-2 h-[100vh] fixed left-0 w-[15rem] py-8 px-2"
+        >
+          <!-- catecory heading -->
+          <div class="category-header"></div>
+          <!-- categories -->
+          <div id="categories" class="flex-col">
+            <!-- dynamic categoruis list -->
+          </div>
+        </div>
+
+        <!-- carts  -->
+        <div class="bg-[#fefff1] p-8 ml-[15rem] w-full">
+          <!-- cart container -->
+          <div>
+            <!-- product title -->
+            <div class="cart-header">
+              <h1 id="cartHeaderText" class="header-text">CART</h1>
+            </div>
+            <!-- caart products -->
+            <div id="cart" class="cart-products mt-8">
+              <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+                <table
+                  class="w-full text-sm text-left text-gray-900 dark:text-gray-900"
+                >
+                  <tbody id="tBody">
+                    <!-- dynamic products -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- cart container end -->
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="./script/cart.js"></script>
+</html>
