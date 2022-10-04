@@ -13,7 +13,7 @@
 | 05  |  [Drum kit]()  | [Live Demo](http://fsjs-drum-kit.netlify.app)  |
 | 06  |  [Bookmark app](https://github.com/MangeshThakre/fsjs-bookMark-app)  | [Live Demo]()  |
 | 07  |  [hex-code-for-selected-color]()  | [Live Demo](https://hex-code-for-selected-color.netlify.app/)  |
-
+| 08  |  [word count app]()  | [Live Demo](https://fsjs-word-count-app.netlify.app)  |
 
 
 
