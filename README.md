@@ -14,6 +14,8 @@
 | 06  |  [Bookmark app](https://github.com/MangeshThakre/fsjs-bookMark-app)  | [Live Demo]()  |
 | 07  |  [hex-code-for-selected-color]()  | [Live Demo](https://hex-code-for-selected-color.netlify.app/)  |
 | 08  |  [word count app]()  | [Live Demo](https://fsjs-word-count-app.netlify.app)  |
+| 09  |  [clopbord]()  | [Live Demo](https://fsjs-clipboard.netlify.app)  |
+| 10  |  [Palindrome Checker Game]()  | [Live Demo](https://palinbrome-checker-game.netlify.app/)  |
 
 
 
