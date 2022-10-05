@@ -18,6 +18,7 @@
 | 10  |  [Palindrome Checker Game]()  | [Live Demo](https://palinbrome-checker-game.netlify.app/)  |
 | 11  |  [Theme changer]()  | [Live Demo](https://fsjs-theme-changer.netlify.app)  |
 | 12  |  [Random Quote generator]()  | [Live Demo](https://fsjs-random-quote-generator.netlify.app)  |
+| 13  |  [stopWatch app]()  | [Live Demo](https://fsjs-stopwatch.netlify.app)  |
 
 
 
