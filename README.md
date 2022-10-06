@@ -19,7 +19,7 @@
 | 11  |  [Theme changer]()  | [Live Demo](https://fsjs-theme-changer.netlify.app)  |
 | 12  |  [Random Quote generator]()  | [Live Demo](https://fsjs-random-quote-generator.netlify.app)  |
 | 13  |  [stopWatch app]()  | [Live Demo](https://fsjs-stopwatch.netlify.app)  |
-| 13  |  [color game]()  | [Live Demo](https://fsjs-color-game.netlify.app)  |
+| 14  |  [color game]()  | [Live Demo](https://fsjs-color-game.netlify.app)  |
 
 
 
