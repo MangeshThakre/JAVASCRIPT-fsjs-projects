@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/text.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Word Count App</title>
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+      }
+      #textarea {
+        font-family: "Open Sans", sans-serif;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#28282B] h-[100vh] w-full bg-cover bg-no-repeat bg-center">
+    <div class="flex justify-center items-center w-full h-full">
+      <div
+        class="lg:w-[60rem] lg:h-[25rem] md:w-[40rem] md:h-[25rem] w-[95%] h-[25rem]"
+      >
+        <div class="h-14 flex justify-end gap-12">
+          <p class="text-teal-50">🔤 Words: <span id="word"> </span></p>
+          <p class="text-teal-50">
+            🅰️ characters : <span id="letters"> </span>
+          </p>
+        </div>
+        <textarea id="textarea" class="w-full h-full p-4 rounded-md"></textarea>
+      </div>
+    </div>
+    <script>
+      const textarea = document.querySelector("#textarea");
+      textarea.addEventListener("input", (event) => {
+        //  target letters elentnt and word element
+        const letters = document.querySelector("#letters");
+        const word = document.querySelector("#word");
+        //   text content of letter elenemt = lenght of input string
+        letters.textContent = event.target.value.length;
+        //   text content of word element = total words
+        word.textContent = event.target.value
+          .split(" ")
+          .filter((e) => e != "").length;
+      });
+    </script>
+  </body>
+</html>

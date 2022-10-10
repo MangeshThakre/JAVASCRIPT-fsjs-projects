@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Orbitron", sans-serif;
+}
+
+body {
+  background-image: url(./assets/wallpaperflare.com_wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding-top: 10rem;
+  flex-direction: column;
+}
+
+.stopwatch {
+  background-color: #28282b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.screen {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 6rem;
+  width: 23rem;
+  border-radius: 6px;
+  border: solid 1px white;
+  padding: 0 1rem;
+}
+.screen > h1 {
+  width: 5rem;
+  text-align: center;
+  color: red;
+  text-shadow: 2px 1px 83px #f00;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.split,
+.reset,
+.startPause {
+  background: transparent;
+  border-radius: 4px;
+  border: white 2px solid;
+  color: white;
+  transition: all 0.2s ease;
+  height: 2rem;
+  width: 5rem;
+  font-weight: bold;
+}
+
+.startActive {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(8, 207, 114);
+  color: #28282b;
+}
+.activeSplit {
+  border: none;
+  background-color: yellow;
+  cursor: pointer;
+  color: #28282b;
+}
+
+.activeReset {
+  border: none;
+  cursor: pointer;
+  background-color: aqua;
+  color: #28282b;
+}
+
+.log {
+  margin-top: 2rem;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;
+  height: 15rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.log::-webkit-scrollbar {
+  display: none;
+}
+
+.addTime {
+  border-radius: 6px;
+  height: 2.5rem;
+  width: 29rem;
+  background-color: #28282b;
+  display: flex;
+  padding: 0 2rem;
+  justify-content: space-between;
+  align-items: center;
+  color: snow;
+  text-shadow: 2px 1px 83px snow;
+}
+
+@media (max-width: 500px) {
+  body {
+    overflow: hidden;
+  }
+  .container {
+    padding-top: 3rem;
+  }
+  .stopwatch {
+    width: 22rem;
+  }
+  .screen {
+    width: 20rem;
+  }
+  .screen > h1 {
+    font-size: 1.5rem;
+  }
+  .addTime {
+    width: 22rem;
+  }
+}

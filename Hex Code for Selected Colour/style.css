@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #28282b;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* padding: 2rem; */
+  height: 100%;
+}
+.head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 6rem;
+  margin: 5rem 0;
+  justify-content: center;
+}
+.heading > h1 {
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+}
+
+.colorBoxContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.colorBox {
+  height: 9rem;
+  width: 9rem;
+  background-color: antiquewhite;
+  cursor: pointer;
+  backdrop-filter: brightness(60%);
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+.colorBox:hover {
+  width: 11rem;
+}
+
+#alert {
+  position: fixed;
+  right: 1rem;
+  top: 4rem;
+  display: none;
+  background-color: whitesmoke;
+  z-index: 2;
+  width: 15rem;
+  border-radius: 9px;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.copiedColor {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+
+@media (max-width: 500px) {
+  .heading > h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+  }
+
+  .colorBox {
+    height: 6rem;
+    width: 6rem;
+    background-color: antiquewhite;
+    cursor: pointer;
+    backdrop-filter: brightness(60%);
+    transition: all 0.2s ease;
+    border-radius: 8px;
+  }
+
+  .colorBox:hover {
+    width: 6rem;
+  }
+}

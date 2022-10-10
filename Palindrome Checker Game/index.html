@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/clipboard-3086517-2584198.webp"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Palindrome Checker Game</title>
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+      }
+      #textarea {
+        font-family: "Open Sans", sans-serif;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#5b2c6f] h-[100vh] w-full bg-cover bg-no-repeat bg-center">
+    <div class="flex justify-center items-center w-full h-full">
+      <div
+        class="relative lg:w-[40rem] lg:h-[6rem] md:w-[40rem] md:h-[6rem] w-[95%] h-[20rem]"
+      >
+        <div class="h-16 text-center text-3xl text-slate-50">
+          Palindrome Checker Game
+        </div>
+        <textarea
+          id="textarea"
+          placeholder="Enter Text here..."
+          class="w-full h-full p-4 rounded-md text-4xl text-[#5b2c6f]"
+        ></textarea>
+        <div class="flex h-20 justify-between items-center">
+          <button
+            id="copyTextBtn"
+            class="h-10 w-36 bg-transparent border-2 rounded-md text-white hover:text-[#5b2c6f] hover:bg-white hover:bottom-0 transition-all duration-200"
+          >
+            Check
+          </button>
+          <div id="isPalindromeText" class="text-white">🫴</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const textarea = document.querySelector("#textarea");
+      const clickBtnEle = document.querySelector("#copyTextBtn");
+      const isPalindromeText = document.querySelector("#isPalindromeText");
+      clickBtnEle.addEventListener("click", () => {
+        if (!textarea.value)
+          return (isPalindromeText.textContent = "👾 Enter text");
+        const textareaArr = textarea.value.toLowerCase().split("");
+        for (let i = 0; i <= Math.floor(textareaArr.length / 2); i++) {
+          // if first item is not equal to last element
+          if (textareaArr[i] != textareaArr[textareaArr.length - (i + 1)]) {
+            return (isPalindromeText.textContent =
+              textarea.value + " is not palinbrome 😑");
+          } else {
+            isPalindromeText.textContent = textarea.value + " is palinbrome 🙌";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

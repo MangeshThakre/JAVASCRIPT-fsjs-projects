@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/stopwatch.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Orbitron:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Stop watch</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- stopwatch -->
+      <div class="stopwatch">
+        <!-- screen start -->
+        <div class="screen" id="screen">
+          <!-- &nbsp;  == whiteSpace " "  -->
+          <h1 id="hr">00 :&nbsp;</h1>
+          <h1 id="m">00 :&nbsp;</h1>
+          <h1 id="s">00 :&nbsp;</h1>
+          <h1 id="ms">00</h1>
+        </div>
+        <!-- screen end -->
+        <!-- buttons start -->
+        <div class="buttons">
+          <button class="startPause" id="startPause">START</button>
+          <button class="split" id="split">SPLIT</button>
+          <button class="reset" id="reset">RESET</button>
+        </div>
+        <!-- buttons end -->
+      </div>
+      <!-- stopwatch end -->
+      <!-- log start -->
+      <div class="log" id ="log">
+        <!-- bynamic logs -->
+      </div>
+      <!-- log end -->
+  </body>
+  <script src="./script.js"></script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/clipboard-3086517-2584198.webp"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Clipboard</title>
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+      }
+      #textarea {
+        font-family: "Open Sans", sans-serif;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#28282B] h-[100vh] w-full bg-cover bg-no-repeat bg-center">
+    <div class="flex justify-center items-center w-full h-full">
+      <div
+        class="relative lg:w-[60rem] lg:h-[22rem] md:w-[40rem] md:h-[25rem] w-[95%] h-[20rem]"
+      >
+        <div class="h-16 text-center text-3xl text-slate-50">
+          Copy To clipboard
+        </div>
+        <textarea id="textarea" class="w-full h-full p-4 rounded-md"></textarea>
+        <div class="flex justify-end h-20 items-center">
+          <button
+            id="copyTextBtn"
+            class="h-10 w-36 bg-transparent border-2 rounded-md text-white hover:text-[#28282B] hover:bg-white hover:bottom-0 transition-all duration-200"
+          >
+            Copy Text
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const textarea = document.querySelector("#textarea");
+      const copyTextBtnEle = document.querySelector("#copyTextBtn");
+      copyTextBtnEle.addEventListener("click", () => {
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(textarea.value);
+        copyTextBtnEle.textContent = "Copied ✅";
+      });
+
+      textarea.addEventListener("input", () => {
+        copyTextBtnEle.textContent = "Copy Text";
+      });
+    </script>
+  </body>
+</html>

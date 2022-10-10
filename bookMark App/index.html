@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quick visit</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/bookmark.png" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="current"></div>
+      <form class="add">
+        <input
+          type="url"
+          name="url"
+          id="urlInput"
+          placeholder="https://example.com"
+          pattern="https://.*"
+          required
+        />
+        <label class="label" for="url">Add BookMark</label>
+        <button class="submitBtn" type="submit">Add</button>
+      </form>
+      <div id="urlList"></div>
+      <div id="alert">Invalid URL</div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

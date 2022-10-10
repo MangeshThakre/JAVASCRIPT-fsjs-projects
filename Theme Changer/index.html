@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/dark.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Theme changer</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dark-light">
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <label for="checkbox" class="label">
+          <i class="sun">🌞</i>
+          <i class="moon">🌕</i>
+          <div class="ball"></div>
+        </label>
+      </div>
+      <div class="body">
+        <p class="p-t p-light">LET'S BUILD SOMETHING</p>
+        <h1 class="h" style="font-size: 3rem">
+          👋 I'm <span style="color: #1976d2"> Mangesh Thakre </span><br />
+          A Full Stack Javascript Developer
+        </h1>
+        <p class="p-b p-light">
+          I’m focused on building responsive applications while learning
+          back-end technologies.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const checkbox = document.querySelector("#checkbox");
+    checkbox.checked = false;
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        document.querySelector(".container").className = "container dark-mode";
+        document.querySelector(".p-b").style.color = "#eaeded";
+        document.querySelector(".h").style.color = "#eaeded";
+        document.querySelector(".p-t").style.color = "#eaeded";
+      } else {
+        document.querySelector(".container").className = "container light-mode";
+        document.querySelector(".p-b").style.color = "#374151";
+        document.querySelector(".h").style.color = "#374151";
+        document.querySelector(".p-t").style.color = "#374151";
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/icons.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- chart -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <!--  -->
+    <title>Expense tracking</title>
+
+    <!-- style -->
+    <style>
+      div[display="show"] {
+        display: block;
+      }
+      div[display="none"] {
+        display: none;
+      }
+    </style>
+    <!--  style end-->
+  </head>
+  <body class="bg-[#FFAC1C] h-[100vh]">
+    <!-- navbar -->
+    <nav class="h-16 flex justify-center items-center shadow-md w-full">
+      <div class="w-9/12">
+        <img src="./assets/icons.png" alt="" class="w-11" />
+      </div>
+      <div>
+        <a href="" target="_blank"></a>
+        <a href="" target="_blank"></a>
+        <a href="" target="_blank"></a>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- body -->
+    <div class="w-full flex justify-center items-center mt-20">
+      <!--  container  -->
+      <div class="bg-[#FFFDD0] h-[75vh] w-[1230px] rounded-lg p-3">
+        <!-- section nav -->
+        <div
+          id="sectionBtns"
+          class="border-b-2 border-yellow-400 flex items-center gap-6 justify-between"
+        >
+          <!-- nav left -->
+          <div id="sactionsNavBtns" class="flex">
+            <div
+              id="spendingBtn"
+              onclick="sectionButtons(this)"
+              section="spending-section"
+              type="button"
+              class="text-yellow-700 font-bold cursor-pointer hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-sm text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-600"
+            >
+              SPENDING
+            </div>
+            <div
+              id="transectionBtn"
+              onclick="sectionButtons(this)"
+              section="transection-section"
+              type="button"
+              class="text-yellow-700 cursor-pointer font-bold hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-sm text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-600"
+            >
+              TRANSECTION
+            </div>
+            <div
+              id="categoryBtn"
+              onclick="sectionButtons(this)"
+              section="categories-section"
+              type="button"
+              class="text-yellow-700 cursor-pointer font-bold hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-sm text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-600"
+            >
+              CATEGORIES
+            </div>
+          </div>
+          <!-- nav left end -->
+          <div
+            id="resenButtonBtn"
+            onclick="handleReset()"
+            type="button"
+            class="text-yellow-700 cursor-pointer font-bold hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-sm text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-600"
+          >
+            RESET ALL
+          </div>
+        </div>
+        <!-- section nav end -->
+        <!-- body -->
+        <div class="flex flex-wrap justify-between h-[90%]">
+          <!-- left section -->
+          <div id="section-container" class="right mt-2 relative w-[665px]">
+            <!-- spending -->
+            <div
+              id="spending-section"
+              display="show"
+              class="overflow-y-auto h-[65vh]"
+            >
+              <!-- thead -->
+              <table class="w-full sticky top-0">
+                <thead
+                  class="text-xs text-yellow-900 uppercase bg-yellow-500 border-t-black"
+                >
+                  <tr>
+                    <td scope="col" class="py-3 px-6">Income</td>
+                    <td
+                      scope="col"
+                      id="total-income-value"
+                      class="py-3 px-6 text-green-700 font-bold"
+                    >
+                      <!-- dynamic income value -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td scope="col" class="py-3 px-6">Expanse</td>
+                    <td
+                      scope="col"
+                      id="total-expance-value"
+                      class="py-3 px-6 text-red-600 font-bold"
+                    >
+                      <!-- dunamic expance value -->
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+              <!-- thead end -->
+
+              <!--  expence -->
+              <table class="w-full mb-20">
+                <tbody id="expenceTbody" class="mt-11">
+                  <tr class="bg-yellow-300 border-b text-gray-900">
+                    <!-- dynamic expence table  -->
+                  </tr>
+                </tbody>
+              </table>
+              <!-- expence end -->
+
+              <!-- spendign section bottom -->
+              <div class="expanse-income absolute bottom-0 w-full bg-[#FFFDD0]">
+                <table class="w-full">
+                  <thead
+                    class="text-xs text-yellow-900 uppercase bg-yellow-500 border-t-black"
+                  >
+                    <tr>
+                      <td scope="col" class="py-3 px-6">Balance</td>
+                      <td scope="col" class="py-3 px-6 font-bold" id="balance">
+                        <!-- dynamic balance value -->
+                      </td>
+                    </tr>
+                  </thead>
+                </table>
+                <!-- Expance and income button -->
+                <div class="flex justify-center w-full z-10 gap-20 mt-1">
+                  <div
+                    section="expenceIncome-section"
+                    id="expenceBtn"
+                    onclick="sectionButtons(this)"
+                    class="text-yellow-900 cursor-pointer text-xs hover:text-white border border-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-bold rounded-sm px-5 py-2.5 text-center"
+                  >
+                    Add Expense
+                  </div>
+                  <div
+                    section="expenceIncome-section"
+                    id="incomeBtn"
+                    onclick="sectionButtons(this)"
+                    class="text-yellow-900 cursor-pointer text-xs hover:text-white border border-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-bold rounded-sm px-5 py-2.5 text-center"
+                  >
+                    Add Income
+                  </div>
+                </div>
+              </div>
+              <!-- spendign section bottom end -->
+            </div>
+            <!-- spending end -->
+
+            <!-- transection -->
+            <div
+              id="transection-section"
+              class="overflow-y-auto h-[65vh]"
+              display="none"
+            >
+              <!-- transection head -->
+              <table class="w-full absolute top-0">
+                <thead
+                  class="text-xs text-yellow-900 uppercase bg-yellow-500 border-t-black"
+                >
+                  <td
+                    scope="col"
+                    class="py-3 px-6 text-green-700"
+                    id="transectionTotalIncome"
+                  >
+                    <!-- dynamic expence value -->
+                  </td>
+                  <td
+                    scope="col"
+                    class="py-3 px-6 text-red-700"
+                    id="transectionTotalExpence"
+                  >
+                    <!-- dynamic total income value -->
+                  </td>
+                </thead>
+              </table>
+              <!-- transection head  end-->
+              <!-- transection body -->
+              <table class="w-full mt-12 mb-12">
+                <tbody
+                  id="transectionBody"
+                  class="text-xs text-yellow-900 uppercase bg-yellow-500 border-t-black"
+                >
+                  <!-- dynamic transection table -->
+                </tbody>
+              </table>
+              <!-- transection end -->
+              <!--transection botton -->
+              <table class="w-full absolute bottom-0">
+                <thead
+                  class="text-xs text-yellow-900 uppercase bg-yellow-500 border-t-black"
+                >
+                  <th scope="col" class="py-3 px-6"></th>
+                  <th scope="col" class="py-3 px-6"></th>
+                </thead>
+              </table>
+              <!--transection botton  end-->
+            </div>
+            <!--transection end  -->
+
+            <!--categories  -->
+            <div id="categories-section" display="none">
+              <!-- toggle expance and income  -->
+              <div class="flex justify-center my-4">
+                <div
+                  class="cursor-pointer font-bold border-[1px] border-yellow-400 text-yellow-800 rounded-md h-8 w-fit flex items-center"
+                >
+                  <span
+                    id="categoriesExpenceBtn"
+                    onclick="selectExpenceIncomeCategory(this)"
+                    class="hover:bg-yellow-200 h-full px-3"
+                    >Expense</span
+                  >
+                  <span
+                    id="categoriesIncomeBtn"
+                    onclick="selectExpenceIncomeCategory(this)"
+                    class="hover:bg-yellow-200 h-full px-3"
+                    >Income</span
+                  >
+                </div>
+              </div>
+              <!--   toggle income expance end -->
+
+              <!-- category body -->
+              <div class="relative">
+                <!--  expence income  category table -->
+                <div class="overflow-auto h-[55vh]">
+                  <!-- category table head -->
+                  <table
+                    class="w-full text-sm text-left text-gray-500 dark:text-gray-400 absolute top-0"
+                  >
+                    <thead
+                      class="text-xs text-yellow-700 uppercase bg-gray-50 dark:bg-yellow-400"
+                    >
+                      <tr>
+                        <th scope="col" class="py-3 px-6">Category</th>
+                        <th></th>
+                        <th id="categoryHead" scope="col" class="py-3 px-6">
+                          <!-- dynamic value -->
+                        </th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <!-- category table head end -->
+
+                  <!-- category body -->
+                  <table class="w-full mt-12 mb-20 text-sm text-left">
+                    <tbody
+                      id="categoryTbody"
+                      class="text-xs text-yellow-900 bg-yellow-300 border-t-black"
+                    >
+                      <!-- dynamic  category -->
+                    </tbody>
+                  </table>
+                  <!-- category body exit -->
+
+                  <!-- add income category -->
+                  <table
+                    id="addIncomeCategdory"
+                    class="absolute bottom-0 w-full"
+                  >
+                    <tbody class="w-full bg-yellow-500">
+                      <tr class="w-full">
+                        <td
+                          scope="col"
+                          class="py-3 px-6 text-yellow-800 font-bold"
+                        >
+                          Add income category
+                        </td>
+                        <form onsubmit="addIncomeCategory(event)">
+                          <td id="categoryHead" scope="col" class="py-3 px-6">
+                            <input
+                              type="search"
+                              id="addIncomeInput"
+                              class="block p-3 text-sm text-yellow-900 font-semibold bg-yellow-400 placeholder-gray-600 rounded-lg border focus:ring-yellow-500 focus:border-yellow-500"
+                              placeholder="add income category"
+                              required
+                            />
+                          </td>
+                          <td scope="col" class="py-3 px-6">
+                            <button
+                              type="submit"
+                              class="focus:outline-none mt-4 text-white bg-yellow-400 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+                            >
+                              Add
+                            </button>
+                          </td>
+                        </form>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- add income category -->
+                </div>
+                <!--  expence income  category table -->
+              </div>
+              <!-- category body  end-->
+            </div>
+            <!-- categories  end-->
+
+            <!-- expence and income -->
+            <div id="expenceIncome-section" display="none">
+              <div class="flex flex-col w-full items-center mt-4">
+                <div
+                  class="cursor-pointer font-bold border-[1px] border-yellow-400 text-yellow-800 rounded-md h-8 flex items-center"
+                >
+                  <span
+                    id="expenceBtn"
+                    selector="expenceIncome-section-expenceBtn"
+                    onclick="initialExpanceIncome(this)"
+                    class="hover:bg-yellow-200 h-full px-3"
+                    >Expense</span
+                  >
+                  <span
+                    id="incomeBtn"
+                    selector="expenceIncome-section-incomeBtn"
+                    onclick="initialExpanceIncome(this)"
+                    class="hover:bg-yellow-200 h-full px-3"
+                    >Income</span
+                  >
+                </div>
+                <form
+                  onsubmit="expanceIncomeSubmit(event)"
+                  class="w-full mt-20"
+                >
+                  <table class="w-full mb-20">
+                    <thead
+                      class="text-xs text-yellow-900 uppercase bg-yellow-500 border-t-black"
+                    >
+                      <tr>
+                        <th scope="col" class="py-3 px-6">
+                          Transaction Details
+                        </th>
+                        <th
+                          scope="col"
+                          class="py-3 px-6"
+                          id="incomeExpenceSectionTableHeading"
+                        >
+                          <!-- dynamic value -->
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="mt-11">
+                      <tr class="bg-yellow-300 border-b text-gray-900">
+                        <th
+                          scope="row"
+                          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
+                        >
+                          Date
+                        </th>
+                        <td class="py-4 px-6">
+                          <input
+                            type="date"
+                            id="expenceIncomeDate"
+                            class="bg-transparent"
+                            required
+                          />
+                        </td>
+                      </tr>
+                      <tr class="bg-yellow-300 border-b text-gray-900">
+                        <th
+                          scope="row"
+                          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
+                        >
+                          Category
+                        </th>
+                        <td class="py-4 px-6">
+                          <button
+                            id="dropdownRadioButton"
+                            data-dropdown-toggle="dropdownDefaultRadio"
+                            class="text-yellow-700 bg-yellow-500 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+                            type="button"
+                          >
+                            Dropdown radio
+                            <svg
+                              class="ml-2 w-4 h-4"
+                              aria-hidden="true"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 9l-7 7-7-7"
+                              ></path>
+                            </svg>
+                          </button>
+
+                          <!-- Dropdown menu -->
+                          <div
+                            id="dropdownDefaultRadio"
+                            class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-yellow-700 dark:divide-yellow-600"
+                          >
+                            <ul
+                              id="dropdown"
+                              class="p-3 space-y-3 text-sm text-yellow-700 dark:text-gray-200"
+                              aria-labelledby="dropdownRadioButton"
+                            >
+                              <!-- dunamic categories   script.js lineNo: 88  ,appendCategoryOptions(e, i)  -->
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="bg-yellow-300 border-b text-gray-900">
+                        <th
+                          scope="row"
+                          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
+                        >
+                          Amount
+                        </th>
+                        <td class="py-4 px-6">
+                          <input
+                            type="number"
+                            name="amount"
+                            id="amount"
+                            min="1"
+                            class="block p-4 pl-10 text-sm text-gray-900 bg-yellow-400 rounded-lg border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500"
+                            required
+                          />
+                        </td>
+                      </tr>
+                      <tr class="bg-yellow-300 border-b text-gray-900">
+                        <th
+                          scope="row"
+                          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
+                        >
+                          <div class="hidden">done</div>
+                        </th>
+                        <td class="py-4 px-6">
+                          <button
+                            type="submit"
+                            id="expenceIncomeSubmit"
+                            selector=""
+                            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                          >
+                            Done
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+            <!-- expence and income end -->
+          </div>
+          <!-- left section end -->
+
+          <!-- right section  -->
+          <div
+            class="piChart flex justify-center items-center border-l-2 border-yellow-600 my-6"
+          >
+            <div id="piechart"></div>
+          </div>
+          <!-- right section end -->
+        </div>
+        <!-- body end -->
+      </div>
+    </div>
+
+    <!-- alert  -->
+    <div
+      class="hidden p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-fit absolute bottom-4 right-3"
+      role="alert"
+    >
+      <svg
+        aria-hidden="true"
+        class="flex-shrink-0 inline w-5 h-5 mr-3"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      <span class="sr-only">Info</span>
+      <div>
+        <span class="font-medium">Warning alert!</span> You can not add similer
+        income category
+      </div>
+    </div>
+    <!-- alert -->
+  </body>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+  <script src="./script.js"></script>
+</html>

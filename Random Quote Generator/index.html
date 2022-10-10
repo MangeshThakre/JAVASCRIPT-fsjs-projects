@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/quote.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Qwigley&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Raleway:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Random Quote Generator</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url(./assets/bg.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .quoteBox {
+        width: 50rem;
+        padding: 0 2rem;
+        font-family: "Qwigley", cursive;
+      }
+      .AutherQuote {
+        height: 10rem;
+        margin: 2rem 0;
+        font-size: 3rem;
+        color: whitesmoke;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .enter-box {
+        position: absolute;
+        margin-top: 4rem;
+        float: right;
+        right: 20%;
+        bottom: 10%;
+      }
+
+      .enter {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .enter > p {
+        font-size: 1rem;
+        font-family: "Raleway", sans-serif;
+        color: #c1463f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- container -->
+    <div class="container">
+      <!-- quote box -->
+      <div class="quoteBox">
+        <!-- <h1 style="text-align: center; font-family: 'Raleway', sans-serif">
+          Heading
+        </h1> -->
+        <div class="AutherQuote">
+          <p id="quote" style="text-align: center">
+            <!-- dynamic quote -->
+          </p>
+          <p id="auther" style="text-align: end; font-size: 1.5rem">
+            <!-- dynamic auther -->
+          </p>
+        </div>
+      </div>
+      <div class="enter-box">
+        <div class="enter">
+          <img src="./assets/enter.svg" style="width: 2rem" alt="" />
+          <p>New Quote</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

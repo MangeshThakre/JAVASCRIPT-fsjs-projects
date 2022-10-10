@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    id="svg1"
+    sodipodi:docname="_svgclean2.svg"
+    viewBox="0 0 56.489 56.719"
+    sodipodi:version="0.32"
+    version="1.1"
+    inkscape:version="0.48.3.1 r9886"
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      inkscape:window-y="0"
+      pagecolor="#ffffff"
+      inkscape:window-maximized="0"
+      inkscape:window-width="674"
+      inkscape:zoom="8"
+      inkscape:window-x="0"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="svg1"
+      inkscape:cx="41.864642"
+      inkscape:cy="-967.89564"
+      inkscape:window-height="645"
+      inkscape:pageopacity="0.0"
+  />
+  <path
+      id="path600"
+      style="stroke-linejoin:round;fill-rule:evenodd;stroke:#333333;stroke-linecap:round;stroke-width:3.1249;fill:#b3b3b3"
+      d="m4.2191 1.5625c-1.4667 0-2.6566 1.3075-2.6566 2.9316v17.27c0 1.6241 1.1899 2.9316 2.6566 2.9316h9.7106v27.529c0 1.6241 1.3075 2.9316 2.9316 2.9316h35.134c1.6241 0 2.9316-1.3075 2.9316-2.9316v-47.731c0-1.6241-1.1902-2.9316-2.6575-2.9316h-48.051z"
+      inkscape:connector-curvature="0"
+      sodipodi:stroke-cmyk="(0 0 0 0.8)"
+      sodipodi:fill-cmyk="(0 0 0 0.3)"
+  />
+  <path
+      id="path601"
+      style="stroke-linejoin:round;fill-rule:evenodd;stroke:#333333;stroke-linecap:round;stroke-width:1.875;fill:#7f7f7f"
+      d="m37.657 12.032h6.718v27.656h-14.844v4.531l-7.265-7.265 7.578-7.578v3.906h7.813v-21.25z"
+      sodipodi:nodetypes="cccccccccc"
+      inkscape:connector-curvature="0"
+      sodipodi:stroke-cmyk="(0 0 0 0.8)"
+      sodipodi:fill-cmyk="(0 0 0 0.5)"
+  />
+  <metadata
+      id="metadata6"
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>
