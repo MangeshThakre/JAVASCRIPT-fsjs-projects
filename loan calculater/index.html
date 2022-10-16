@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/icons8-calculator-50.png"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Lone calculator</title>
+  </head>
+  <body class="bg-green-500 h-[100vh]">
+    <!-- navbar -->
+    <nav class="h-20 px-24 py-5 bg-[#3498db]">
+      <div class="flex items-center">
+        <img src="./assets/icons8-calculator-50.png" alt="logo" />
+
+        <span class="pl-8 text-xl font-bold text-white">Lone Calculator </span>
+      </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- container -->
+    <div class="mt-20 flex justify-center">
+      <!-- left card -->
+      <div
+        class="p-6 max-w-sm bg-[#3498db] rounded-lg border border-gray-200 shadow-md"
+      >
+        <form id="form">
+          <div class="mb-6">
+            <label
+              for="amount"
+              type="number"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Loan Amount in Rs :</label
+            >
+            <input
+              type="number"
+              min="1"
+              id="amount"
+              placeholder="amount in Rs"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="Interest"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Interest Rate in % p.a. :</label
+            >
+            <input
+              type="number"
+              min="1"
+              id="Interest"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              required
+              placeholder="Interest"
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="Period"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Period (in months) :</label
+            >
+            <input
+              type="number"
+              min="1"
+              id="Period"
+              placeholder="Period (months)"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Calculate
+          </button>
+        </form>
+      </div>
+      <!-- card end -->
+
+      <!-- right -->
+      <div>
+        <div id="piechart"></div>
+        <div
+          id="result"
+          class="flex gap-8 justify-center bg-white rounded-b-lg items-center h-10"
+        >
+          <div><span class="font-bold">EMI : </span><span id="EMI"></span></div>
+          <div>
+            <span class="font-bold">Average Interest : </span
+            ><span id="AvgIntrest"></span>
+          </div>
+          <div>
+            <span class="font-bold">Monthly Interest : </span
+            ><span id="MIntrest"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- conteiner end -->
+  </body>
+  <script src="./script.js"></script>
+</html>
