@@ -23,7 +23,7 @@
 | 15  |  [complete form validation](https://github.com/MangeshThakre/JAVASCRIPT-fsjs-25-projects/tree/master/complete%20form%20validation)  | [Live Demo](https://fsjs-complete-form-validation.netlify.app)  |
 | 16  |  [counDown app](https://github.com/MangeshThakre/JAVASCRIPT-fsjs-25-projects/tree/master/countdown%20app)  | [Live Demo](https://fsjs-countdown-app.netlify.app)  |
 | 17  |  [loan Calculator](https://github.com/MangeshThakre/JAVASCRIPT-fsjs-25-projects/tree/master/loan%20calculater)  | [Live Demo](https://fsjs-loan-calculator.netlify.app)  |
-| 18  |  [Autocomplete search]()  | [Live Demo](https://fsjs-autocomplete-search.netlify.app)  |
+| 18  |  [Autocomplete search](https://github.com/MangeshThakre/JAVASCRIPT-fsjs-25-projects/tree/master/autocomplete%20search)  | [Live Demo](https://fsjs-autocomplete-search.netlify.app)  |
 
 
 
